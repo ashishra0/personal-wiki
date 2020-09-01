@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Some Title</title>
+    <link>https://example.com/</link>
+    <description>Recent content in Home on Some Title</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting up testing environment in rails</title>
+      <link>https://example.com/rails-test-env-setup/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/rails-test-env-setup/</guid>
+      <description>Rails is a popular web application framework. You have this amazing idea and want to turn it into a web application? What framework do you choose? Of course Rails. We tend to quickly scaffold the application and write some code and bring the idea to life, But when it comes to testing the application, there is no scaffold command or anything that does the job within seconds. So we then spend hours trying to set up a testing environment and then later write tests.</description>
+    </item>
+    
+    <item>
+      <title>Using Rails migrations with Hasura</title>
+      <link>https://example.com/rails-hasura-migration-guide/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/rails-hasura-migration-guide/</guid>
+      <description>This guide assumes you have a Rails application setup with postgres database and a Hasura instance running.
+Introduction Hasura comes with a migration tool out of the box to help you manage your Postgres schema, So if we create a table on the console then hasura automatically tracks the table and then that information is added to the metadata which indicates the newly created table should be exposed via GraphQL engine.</description>
+    </item>
+    
+    <item>
+      <title>Backup / Restore postgres data on Docker</title>
+      <link>https://example.com/pg_dump/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/pg_dump/</guid>
+      <description>Postgres comes with handy tools such as pg_dump and psql which lets us take backups and restore them with ease.
+To back up data, we can use pg_dump:
+docker exec &amp;lt;postgres_container_name&amp;gt; pg_dump -U postgres &amp;lt;database_name&amp;gt; &amp;gt; backup.sql This command will create a text file named backup.sql containing all the data and schema of your database.
+To import the data back into Postgres, we use psql:
+cat backup.sql | docker exec -i &amp;lt;postgres_container_name&amp;gt; psql -U postgres -d &amp;lt;database_name&amp;gt; &amp;lt; backup.</description>
+    </item>
+    
+    <item>
+      <title>Postgres full text search</title>
+      <link>https://example.com/postgres-full-text-search/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/postgres-full-text-search/</guid>
+      <description>In this guide we will walk through how to implement a full text search in Postgres to create a custom SQL function and expose it to the GraphQL API.
+What is FTS? Imagine we have a set of text documents stored in a database. These documents could be an abstract of certain text article or the entire article itself and we want to find out if certain words are present in them or not.</description>
+    </item>
+    
+    <item>
+      <title>Docker 101</title>
+      <link>https://example.com/notes/docker/docker-101/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/notes/docker/docker-101/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

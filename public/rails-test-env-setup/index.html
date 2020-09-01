@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="generator" content="Hugo 0.73.0" />
+
+  
+  <meta name="description" content="Some description">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://example.com/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://example.com/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://example.com/css/bootstrap.min.css" />
+
+  
+  <title>Setting up testing environment in rails | Some Title</title>
+  
+
+  <style>
+  body {
+    min-width: 300px;
+  }
+
+  .custom-navbar {
+    margin-bottom: 1em;
+    height: 60px;
+  }
+
+  .custom-navbar a {
+    display: inline-block;
+    padding: 18px 0;
+    margin-right: 1em;
+    font-weight: bold;
+  }
+
+  .custom-navbar a:hover,
+  .custom-navbar a:focus {
+    text-decoration: none;
+  }
+
+  @media print {
+    .custom-navbar {
+      display: none;
+    }
+  }
+
+  article {
+    padding-bottom: 1em;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+    {
+      {
+      with .Site.Params.contentBackgroundColor
+    }
+  }
+
+  body {
+    background-color: {
+        {
+        . | safeCSS
+      }
+    }
+
+    ;
+  }
+
+    {
+      {
+      else
+    }
+  }
+
+  body {
+    background-color: #fff;
+  }
+
+    {
+      {
+      end
+    }
+  }
+
+    {
+      {
+      with .Site.Params.contentTextColor
+    }
+  }
+
+  body {
+    color: {
+        {
+        . | safeCSS
+      }
+    }
+
+    ;
+  }
+
+    {
+      {
+      else
+    }
+  }
+
+  body {
+    color: #212529;
+  }
+
+    {
+      {
+      end
+    }
+  }
+
+    {
+      {
+      with .Site.Params.contentLinkColor
+    }
+  }
+
+  a {
+    color: {
+        {
+        . | safeCSS
+      }
+    }
+
+    ;
+  }
+
+    {
+      {
+      else
+    }
+  }
+
+  a {
+    color: #007bff;
+  }
+
+    {
+      {
+      end
+    }
+  }
+
+    {
+      {
+      with .Site.Params.contentLinkHoverColor
+    }
+  }
+
+  a:hover,
+  a:focus {
+    color: {
+        {
+        . | safeCSS
+      }
+    }
+
+    ;
+  }
+
+    {
+      {
+      else
+    }
+  }
+
+  a:hover,
+  a:focus {
+    color: #0056b3;
+  }
+
+    {
+      {
+      end
+    }
+  }
+
+    {
+      {
+      with .Site.Params.navbarBackgroundColor
+    }
+  }
+
+  .custom-navbar {
+    background-color: {
+        {
+        . | safeCSS
+      }
+    }
+
+    ;
+  }
+
+    {
+      {
+      else
+    }
+  }
+
+  .custom-navbar {
+    background-color: #212529;
+  }
+
+    {
+      {
+      end
+    }
+  }
+
+    {
+      {
+      with .Site.Params.navbarLinkColor
+    }
+  }
+
+  .custom-navbar a {
+    color: {
+        {
+        . | safeCSS
+      }
+    }
+
+    ;
+  }
+
+    {
+      {
+      else
+    }
+  }
+
+  .custom-navbar a {
+    color: rgba(255, 255, 255, .75);
+  }
+
+    {
+      {
+      end
+    }
+  }
+
+    {
+      {
+      with .Site.Params.navbarLinkHoverColor
+    }
+  }
+
+  .custom-navbar a:hover,
+  .custom-navbar a:focus {
+    color: {
+        {
+        . | safeCSS
+      }
+    }
+
+    ;
+  }
+
+    {
+      {
+      else
+    }
+  }
+
+  .custom-navbar a:hover,
+  .custom-navbar a:focus {
+    color: rgba(255, 255, 255, 1);
+  }
+
+    {
+      {
+      end
+    }
+  }
+
+    {
+      {
+      with .Site.Params.wrapperMaxWidth
+    }
+  }
+
+  .container {
+    max-width: {
+        {
+        . | safeCSS
+      }
+    }
+
+    ;
+  }
+
+    {
+      {
+      else
+    }
+  }
+
+  .container {
+    max-width: 800px;
+  }
+
+    {
+      {
+      end
+    }
+  }
+
+    {
+      {
+      if eq .Site.Params.customCodeStyle true
+    }
+  }
+
+  pre {
+    display: block;
+    padding: 9.5px;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  pre code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+  }
+
+  code {
+    padding: 2px 4px;
+    color: inherit;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: .9em;
+  }
+
+    {
+      {
+      end
+    }
+  }
+
+    {
+      {
+      if eq .Site.Params.customBlockquoteStyle true
+    }
+  }
+
+  blockquote,
+  .blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 1em;
+    border-left: 5px solid #6c757d;
+  }
+
+    {
+      {
+      end
+    }
+  }
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Personal Wiki</a>
+    
+    <a href="/post">Posts</a>
+    
+    <a href="/notes/">Notes</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/resources/">Resources</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>Setting up testing environment in rails</h1>
+<p>
+  <small class="text-secondary">
+    
+    
+    Mar 15, 2020
+  </small>
+  
+
+<small><code><a href="https://example.com/tags/rails">Rails</a></code></small>
+
+</p>
+<p>Rails is a popular web application framework. You have this amazing idea and want to turn it into a web application? What framework do you choose? Of course Rails. We tend to quickly scaffold the application and write some code and bring the idea to life, But when it comes to testing the application, there is no scaffold command or anything that does the job within seconds. So we then spend hours trying to set up a testing environment and then later write tests.</p>
+<p>The intention of my article is to show how to quickly set up a testing environment to avoid future hassle. Sound good? Let’s begin.</p>
+<p><b>NOTE</b>: This article assumes you are familiar with Rails, so we won’t dive deep into the topic just read the documentation for each and every dependency used and you will be good to go. This guide won’t be showing actual tests in code.</p>
+<h3 id="generate-a-new-rails-app">Generate a new rails app</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ rails new test_app --tests
+</code></pre></div><p>&mdash;tests flag tells Rails to exclude the default Minitest framework because we will use RSpec instead.</p>
+<h3 id="the-tools-we-will-need">The tools we will need</h3>
+<ul>
+<li>rspec-rails  — Testing framework.</li>
+<li>factory_bot_rails  — A fixtures replacement with a more straightforward syntax. You’ll see.</li>
+<li>shoulda_matchers  — Provides RSpec with additional matchers.</li>
+<li>database_cleaner  — You guessed it! It literally cleans our test database to ensure a clean state in each test suite.</li>
+<li>faker — A library for generating fake data. We’ll use this to generate test data.</li>
+<li>simplecov — A code coverage analysis tool for Ruby.</li>
+</ul>
+<h3 id="the-work-begins">The work begins</h3>
+<p>Let’s set them up. In your Gemfile:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">group <span style="color:#e6db74">:development</span>, <span style="color:#e6db74">:test</span> <span style="color:#66d9ef">do</span>
+  gem <span style="color:#e6db74">&#39;database_cleaner&#39;</span>
+  gem <span style="color:#e6db74">&#39;factory_bot_rails&#39;</span>, <span style="color:#e6db74">&#39;~&gt; 4.0&#39;</span>
+  gem <span style="color:#e6db74">&#39;faker&#39;</span>, <span style="color:#e6db74">&#39;~&gt; 2.4.0&#39;</span>
+  gem <span style="color:#e6db74">&#39;pry-rails&#39;</span>
+  gem <span style="color:#e6db74">&#39;rspec-rails&#39;</span>
+  gem <span style="color:#e6db74">&#39;shoulda-matchers&#39;</span>, <span style="color:#e6db74">&#39;~&gt; 3.1&#39;</span>
+  gem <span style="color:#e6db74">&#39;simplecov&#39;</span>, require: <span style="color:#66d9ef">false</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>Do a bundle install</p>
+<p>Initialize the spec directory (This is where the tests file will reside)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ rails generate rspec:install
+</code></pre></div><p>This quickly adds the following files which are used for configuration:</p>
+<ul>
+<li>.rspec</li>
+<li>spec/spec_helper.rb</li>
+<li>spec/rails_helper.rb</li>
+</ul>
+<p>Create a factories directory in the spec folder (factory bot uses this as the default directory). This is where you define the test data.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ mkdir spec/factories
+</code></pre></div><h3 id="configuration">Configuration</h3>
+<p>In spec/rails_helper.rb</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># add below require &#39;spec_helper&#39;</span>
+
+require <span style="color:#e6db74">&#39;rspec/rails&#39;</span>
+require <span style="color:#e6db74">&#39;support/factory_bot&#39;</span>
+require <span style="color:#e6db74">&#39;simplecov&#39;</span>
+require <span style="color:#e6db74">&#39;database_cleaner&#39;</span>
+<span style="color:#66d9ef">SimpleCov</span><span style="color:#f92672">.</span>profiles<span style="color:#f92672">.</span>define <span style="color:#e6db74">&#39;no_coverage&#39;</span> <span style="color:#66d9ef">do</span>
+  load_profile <span style="color:#e6db74">&#39;rails&#39;</span>
+  add_group <span style="color:#e6db74">&#39;Routes&#39;</span>, <span style="color:#e6db74">&#39;config/routes&#39;</span>
+  add_filter <span style="color:#e6db74">&#39;vendor&#39;</span>
+  add_filter <span style="color:#e6db74">&#39;app/channels&#39;</span>
+  add_filter <span style="color:#e6db74">&#39;app/mailers&#39;</span>
+  add_filter <span style="color:#e6db74">&#39;app/helpers&#39;</span>
+<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">SimpleCov</span><span style="color:#f92672">.</span>start <span style="color:#e6db74">&#39;no_coverage&#39;</span>
+
+<span style="color:#75715e"># Add below the do block</span>
+
+<span style="color:#66d9ef">RSpec</span><span style="color:#f92672">.</span>configure <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>config<span style="color:#f92672">|</span>
+  config<span style="color:#f92672">.</span>use_transactional_fixtures <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+  config<span style="color:#f92672">.</span>before(<span style="color:#e6db74">:suite</span>) <span style="color:#66d9ef">do</span>
+    <span style="color:#66d9ef">DatabaseCleaner</span><span style="color:#f92672">.</span>clean_with(<span style="color:#e6db74">:truncation</span>)
+    <span style="color:#66d9ef">DatabaseCleaner</span><span style="color:#f92672">.</span>strategy <span style="color:#f92672">=</span> <span style="color:#e6db74">:transaction</span>
+<span style="color:#66d9ef">end</span>
+
+  config<span style="color:#f92672">.</span>around(<span style="color:#e6db74">:each</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>example<span style="color:#f92672">|</span>
+    <span style="color:#66d9ef">DatabaseCleaner</span><span style="color:#f92672">.</span>cleaning <span style="color:#66d9ef">do</span>
+      example<span style="color:#f92672">.</span>run
+    <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#75715e"># Add after the do block</span>
+
+<span style="color:#66d9ef">Shoulda</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Matchers</span><span style="color:#f92672">.</span>configure <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>config<span style="color:#f92672">|</span>
+  config<span style="color:#f92672">.</span>integrate <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>with<span style="color:#f92672">|</span>
+    with<span style="color:#f92672">.</span>test_framework <span style="color:#e6db74">:rspec</span>
+    with<span style="color:#f92672">.</span>library <span style="color:#e6db74">:rails</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>Create a support folder inside the spec directory</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ mkdir spec/support
+</code></pre></div><p>Create a file factory_bot.rb inside the support directory and add the following to the file</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># spec/support/factory_bot.rb</span>
+
+<span style="color:#66d9ef">RSpec</span><span style="color:#f92672">.</span>configure <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>config<span style="color:#f92672">|</span>
+  config<span style="color:#f92672">.</span>include <span style="color:#66d9ef">FactoryBot</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Syntax</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Methods</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>And that’s a wrap. We have successfully added the testing stack to our Rails app.</p>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>

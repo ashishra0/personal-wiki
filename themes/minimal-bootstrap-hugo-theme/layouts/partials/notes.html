@@ -1,0 +1,17 @@
+<h2>Notes</h2>
+
+{{ range where .Site.Pages "Params.type" "notes" }}
+{{ if .Title }}
+<p>
+  <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+  {{ $customDateFormat := "January 2, 2006" }}
+  {{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{end}}
+  <br>
+  <small class="text-secondary">{{ .PublishDate.Format $customDateFormat }}</small>
+  {{ partial "tags" . }}
+  <br>
+</p>
+{{ else }}
+<p>No content</p>
+{{ end }}
+{{ end }}

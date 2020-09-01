@@ -1,0 +1,9 @@
+{{- define "main" -}}
+
+<p>{{ .Content }}</p>
+<hr />
+{{- partial "post-list.html" . -}}
+<hr>
+{{- partial "notes.html" . -}}
+
+{{- end -}}

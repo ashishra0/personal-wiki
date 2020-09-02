@@ -1,6 +1,6 @@
 +++
 author = "Ashish Rao"
-title = "Docker 101"
+title = ""
 date = "2019-03-11"
 description = "All things docker."
 type = "notes"

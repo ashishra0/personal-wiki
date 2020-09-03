@@ -1,9 +1,9 @@
 {{- define "main" -}}
 
-<h1>{{ .Title }}</h1>
+<h2>{{ .Title }}</h2>
 
 {{ range .Data.Terms.Alphabetical }}
-<p><a href="{{ .Page.RelPermalink }}"><code>{{ .Page.Title }}</code></a> {{ .Count }}</p>
+<p><a class="tag" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>{{ .Count }}</p>
 {{ end }}
 
 {{- end -}}

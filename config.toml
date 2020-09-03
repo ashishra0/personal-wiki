@@ -32,7 +32,7 @@ theme = "minimal-bootstrap-hugo-theme"
 
 [menu]
   [[menu.nav]]
-  name = "Personal Wiki"
+  name = "Wiki"
   url = "/"
   weight = 1
   [[menu.nav]]

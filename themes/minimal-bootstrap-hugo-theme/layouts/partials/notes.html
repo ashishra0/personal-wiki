@@ -1,9 +1,9 @@
-<h2>Notes</h2>
+<h2 class="posts">Notes</h2>
 
 {{ range where .Site.Pages "Params.type" "notes" }}
 {{ if .Title }}
 <p>
-  <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+  <a href="{{ .Permalink }}"><span class="post-title">{{ .Title | markdownify }}</span></a>
   {{ $customDateFormat := "January 2, 2006" }}
   {{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{end}}
   <br>

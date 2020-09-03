@@ -1,11 +1,12 @@
 {{- define "main" -}}
 
-<h3>{{ .Title }}</h3>
+<h2>{{ .Title }}</h2>
 
 {{ $pages := .Pages }}
 {{ range $pages.ByPublishDate.Reverse }}
+{{ if .Title }}
 <p>
-  <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+  <a href="{{ .Permalink }}"><span class="post-title">{{ .Title | markdownify }}</span></a>
   {{ $customDateFormat := "January 2, 2006" }}
   {{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
   <br>
@@ -16,6 +17,9 @@
   {{ .Summary }}
   {{ end }}
 </p>
+{{ else }}
+<p>Adding soon</p>
+{{ end }}
 {{ end }}
 
 {{- end -}}

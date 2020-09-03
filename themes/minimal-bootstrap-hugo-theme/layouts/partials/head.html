@@ -28,7 +28,9 @@
   <meta name="theme-color" content="{{ .Site.Params.faviconThemeColor }}">
 
   {{ $bootstrapCss := "css/bootstrap.min.css" }}
+  {{ $indexCss := "css/index.css" }}
   <link rel="stylesheet" href="{{ $bootstrapCss | absURL }}" />
+  <link rel="stylesheet" href="{{ $indexCss | absURL }}" />
 
   {{ if .IsHome }}
   {{ $homepage := "Home" }}

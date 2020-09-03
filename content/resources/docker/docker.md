@@ -2,8 +2,8 @@
 author = "Ashish Rao"
 title = ""
 date = "2019-03-11"
-description = "All things docker."
-type = "notes"
+description = "All docker resources I have come across resides here"
+type = "resources"
 tags = [
     "docker",
 ]

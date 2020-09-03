@@ -1,0 +1,15 @@
+<h2 class="posts">Resources</h2>
+
+{{ range where .Site.Pages "Params.type" "resources" }}
+{{ if .Title }}
+<p>
+  <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+  {{ $customDateFormat := "January 2, 2006" }}
+  <br>
+  {{ partial "tags" . }}
+  <br>
+</p>
+{{ else }}
+<p>Adding soon</p>
+{{ end }}
+{{ end }}

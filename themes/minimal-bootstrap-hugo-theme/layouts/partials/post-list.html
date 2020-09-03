@@ -1,9 +1,9 @@
-<h2>Posts</h2>
+<h2 class="posts">Posts</h2>
 {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{ range $pages.ByPublishDate.Reverse }}
 
 <p>
-  <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+  <a href="{{ .Permalink }}"><span class="post-title">{{ .Title | markdownify }}</span></a>
   {{ $customDateFormat := "January 2, 2006" }}
   {{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
   <br>

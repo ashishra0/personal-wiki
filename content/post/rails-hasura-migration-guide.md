@@ -1,14 +1,11 @@
 +++
-title = "Using Rails migrations with Hasura"
+date = 2020-02-12T00:00:00Z
 description = ""
-tags = [
-    "Rails",
-]
-date = "2020-02-12"
-+++
+tags = ["Rails"]
+title = "Using Rails migrations with Hasura"
 
-This guide assumes you have a Rails application setup with postgres database and a Hasura
-instance running.
++++
+This guide assumes you have a Rails application setup with postgres database and a Hasura instance running. hahah
 
 # Introduction
 

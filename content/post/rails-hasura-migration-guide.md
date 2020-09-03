@@ -5,7 +5,7 @@ tags = ["Rails"]
 title = "Using Rails migrations with Hasura"
 
 +++
-This guide assumes you have a Rails application setup with postgres database and a Hasura instance running. hahah
+This guide assumes you have a Rails application setup with postgres database and a Hasura instance running.
 
 # Introduction
 

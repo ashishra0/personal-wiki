@@ -1,7 +1,7 @@
 +++
 date = 2020-02-12T00:00:00Z
 description = ""
-tags = ["Rails"]
+tags = ["Rails", "hasura"]
 title = "Using Rails migrations with Hasura"
 
 +++

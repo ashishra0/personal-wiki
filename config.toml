@@ -1,6 +1,6 @@
 baseURL = "https://ashish-wiki.netlify.app"
 languageCode = "en-us"
-title = "Some Title"
+title = "Ashish's personal wiki"
 theme = "minimal-bootstrap-hugo-theme"
 
 [taxonomies]
@@ -32,7 +32,7 @@ theme = "minimal-bootstrap-hugo-theme"
 
 [menu]
   [[menu.nav]]
-  name = "Wiki"
+  name = "Space"
   url = "/"
   weight = 1
   [[menu.nav]]

@@ -1,10 +1,10 @@
----
++++
 date = 2019-03-11T00:00:00Z
 type = "notes"
 series = ["Self-learning"]
 tags = ["self-learning"]
 title = "Learning CS & other stuff"
----
++++
 
 ### Interview prep
 
